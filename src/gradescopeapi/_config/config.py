@@ -4,7 +4,7 @@ Configuration file for FastAPI. Specifies the specific objects and data models u
 
 from datetime import datetime
 import io
-from typing import List, Dict, Optional
+from typing import Optional
 from pydantic import BaseModel
 
 

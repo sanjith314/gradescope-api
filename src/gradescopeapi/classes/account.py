@@ -110,7 +110,7 @@ class Account:
             users = get_course_members(membership_soup, course_id)
 
             return users
-        except Exception as e:
+        except Exception:
             return None
 
     def get_assignments(self, course_id: str) -> List[Assignment]:
