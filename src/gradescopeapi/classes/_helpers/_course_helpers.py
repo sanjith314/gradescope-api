@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
-from gradescopeapi.classes.courses import Course
-from gradescopeapi.classes.member import Member
+from gradescopeapi.classes._data_model import Course, Member
 import json
 
 

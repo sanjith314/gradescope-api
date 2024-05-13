@@ -2,13 +2,11 @@ from datetime import datetime
 from fastapi import Depends, FastAPI, HTTPException, status
 from typing import Dict, List
 from gradescopeapi._config.config import LoginRequestModel, FileUploadModel
-from gradescopeapi.classes.account import Account
-from gradescopeapi.classes.assignments import Assignment, update_assignment_date
+from gradescopeapi.classes.assignments import update_assignment_date
 from gradescopeapi.classes.connection import GSConnection
 from gradescopeapi.classes.extensions import get_extensions, update_student_extension
 from gradescopeapi.classes.upload import upload_assignment
-from gradescopeapi.classes.courses import Course
-from gradescopeapi.classes.member import Member
+from gradescopeapi.classes._data_model import Course, Member, Assignment
 
 app = FastAPI()
 
