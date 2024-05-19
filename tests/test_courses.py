@@ -1,6 +1,8 @@
 from gradescopeapi.classes.courses import get_courses, get_course_users
+from custom_skips import instructor, student, ta
 
 
+@student
 def test_get_courses_student(create_session):
     # fetch student account
     session = create_session("student")
@@ -11,6 +13,7 @@ def test_get_courses_student(create_session):
     assert courses["instructor"] == {} and courses["student"] != {}
 
 
+@instructor
 def test_get_courses_instructor(create_session):
     # fetch instructor account
     session = create_session("instructor")
@@ -21,6 +24,7 @@ def test_get_courses_instructor(create_session):
     assert courses["instructor"] != {} and courses["student"] == {}
 
 
+@ta
 def test_get_courses_ta(create_session):
     # fetch ta account
     session = create_session("ta")
@@ -31,6 +35,7 @@ def test_get_courses_ta(create_session):
     assert courses["instructor"] != {} and courses["student"] != {}
 
 
+@instructor
 def test_membership_invalid(create_session):
     # fetch instructor account
     session = create_session("instructor")
@@ -43,6 +48,7 @@ def test_membership_invalid(create_session):
     assert members is None
 
 
+@instructor
 def test_membership(create_session):
     # fetch instructor account
     session = create_session("instructor")

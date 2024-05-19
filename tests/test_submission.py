@@ -1,19 +1,11 @@
-import os
-from dotenv import load_dotenv
-import pytest
-from unittest.mock import patch
-
 from gradescopeapi.classes._data_model import Assignment
 
 from gradescopeapi.classes.assignments import get_assignments
 
-# Load .env file
-load_dotenv()
-GRADESCOPE_CI_INSTRUCTOR_EMAIL = os.getenv("GRADESCOPE_CI_INSTRUCTOR_EMAIL")
-GRADESCOPE_CI_INSTRUCTOR_PASSWORD = os.getenv("GRADESCOPE_CI_INSTRUCTOR_PASSWORD")
-GRADESCOPE_CI_STUDENT_EMAIL = os.getenv("GRADESCOPE_CI_STUDENT_EMAIL")
+from custom_skips import instructor
 
 
+@instructor
 def test_get_assignments(create_session):
     """Test fetching assignments with valid course ID."""
     session = create_session("instructor")

@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
 
 from gradescopeapi.classes.assignments import update_assignment_date
+from custom_skips import instructor
 
 
+@instructor
 def test_valid_change_assignment(create_session):
     """Test valid extension for a student."""
     # create test session
@@ -25,6 +27,7 @@ def test_valid_change_assignment(create_session):
     assert result
 
 
+@instructor
 def test_boundary_date_assignment(create_session):
     """Test updating assignment with boundary date values."""
     test_session = create_session("instructor")

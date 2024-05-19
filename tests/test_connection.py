@@ -7,6 +7,8 @@ from gradescopeapi.classes._helpers._login_helpers import (
     get_auth_token_init_gradescope_session,
 )
 
+from custom_skips import student
+
 # load .env file
 load_dotenv()
 
@@ -14,6 +16,7 @@ GRADESCOPE_CI_STUDENT_EMAIL = os.getenv("GRADESCOPE_CI_STUDENT_EMAIL")
 GRADESCOPE_CI_STUDENT_PASSWORD = os.getenv("GRADESCOPE_CI_STUDENT_PASSWORD")
 
 
+@student
 def test_get_auth_token_init_gradescope_session():
     # create test session
     test_session = requests.Session()
@@ -27,6 +30,7 @@ def test_get_auth_token_init_gradescope_session():
     assert auth_token and cookie_check
 
 
+@student
 def test_login_set_session_cookies_correct_creds():
     # create test session
     test_session = requests.Session()

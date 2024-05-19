@@ -1,6 +1,8 @@
 from gradescopeapi.classes.upload import upload_assignment
+from custom_skips import student
 
 
+@student
 def test_valid_upload(create_session):
     # create test session
     test_session = create_session("student")
@@ -23,9 +25,12 @@ def test_valid_upload(create_session):
             leaderboard_name="test",
         )
 
-    assert submission_link is not None, "Failed to upload assignment. Double check due dates on Gradescope to ensure the assignment is still open."
+    assert (
+        submission_link is not None
+    ), "Failed to upload assignment. Double check due dates on Gradescope to ensure the assignment is still open."
 
 
+@student
 def test_invalid_upload(create_session):
     # create test session
     test_session = create_session("student")
@@ -50,6 +55,7 @@ def test_invalid_upload(create_session):
     assert submission_link is None
 
 
+@student
 def test_upload_with_no_files(create_session):
     test_session = create_session("student")
     course_id = "753413"
