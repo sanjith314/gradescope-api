@@ -1,6 +1,7 @@
+import json
+
 from bs4 import BeautifulSoup
 from gradescopeapi.classes._data_model import Course, Member
-import json
 
 
 def get_courses_info(

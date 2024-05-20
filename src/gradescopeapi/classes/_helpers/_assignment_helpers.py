@@ -1,7 +1,7 @@
-import requests
 import json
 from datetime import datetime
 
+import requests
 from gradescopeapi.classes._data_model import Assignment
 
 

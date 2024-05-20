@@ -1,5 +1,5 @@
-from gradescopeapi.classes.courses import get_courses, get_course_users
 from custom_skips import instructor, student, ta
+from gradescopeapi.classes.courses import get_course_users, get_courses
 
 
 @student

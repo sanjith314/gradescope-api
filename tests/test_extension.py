@@ -1,8 +1,8 @@
-import pytest
 from datetime import datetime, timedelta
 
-from gradescopeapi.classes.extensions import get_extensions, update_student_extension
+import pytest
 from custom_skips import instructor
+from gradescopeapi.classes.extensions import get_extensions, update_student_extension
 
 
 @instructor

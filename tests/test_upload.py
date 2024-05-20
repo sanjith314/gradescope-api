@@ -1,5 +1,5 @@
-from gradescopeapi.classes.upload import upload_assignment
 from custom_skips import student
+from gradescopeapi.classes.upload import upload_assignment
 
 
 @student

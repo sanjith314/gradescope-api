@@ -1,15 +1,14 @@
+import requests
 from bs4 import BeautifulSoup
 
-from gradescopeapi.classes._helpers._course_helpers import (
-    get_courses_info,
-    get_course_members,
-)
+from gradescopeapi.classes._data_model import Member
 from gradescopeapi.classes._helpers._assignment_helpers import (
     check_page_auth,
 )
-from gradescopeapi.classes._data_model import Member
-
-import requests
+from gradescopeapi.classes._helpers._course_helpers import (
+    get_course_members,
+    get_courses_info,
+)
 
 
 def get_courses(session: requests.Session) -> dict:

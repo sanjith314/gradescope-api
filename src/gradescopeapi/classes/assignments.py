@@ -1,18 +1,19 @@
 """Functions for modifying assignment details."""
 
+import datetime
+import time
+
 import requests
 from bs4 import BeautifulSoup
-import datetime
 from requests_toolbelt.multipart.encoder import MultipartEncoder
+
+from gradescopeapi.classes._data_model import Assignment
 from gradescopeapi.classes._helpers._assignment_helpers import (
     check_page_auth,
     get_assignments_instructor_view,
     get_assignments_student_view,
     get_submission_files,
 )
-import time
-
-from gradescopeapi.classes._data_model import Assignment
 
 
 def update_assignment_date(

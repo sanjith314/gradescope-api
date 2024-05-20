@@ -1,8 +1,6 @@
-from gradescopeapi.classes._data_model import Assignment
-
-from gradescopeapi.classes.assignments import get_assignments
-
 from custom_skips import instructor
+from gradescopeapi.classes._data_model import Assignment
+from gradescopeapi.classes.assignments import get_assignments
 
 
 @instructor
