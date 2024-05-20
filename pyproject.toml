@@ -18,6 +18,7 @@ classifiers = [
 dependencies = [
     "beautifulsoup4>=4.12.3",
     "fastapi>=0.111.0",
+    "pyjwt[crypto]>=2.8.0",
     "pytest>=8.2.0",
     "python-dotenv>=1.0.1",
     "requests-toolbelt>=1.0.0",
@@ -51,10 +52,11 @@ dev = [
 ]
 
 [tool.pdm.scripts]
+dev = "fastapi dev src/gradescopeapi/api/api.py"
 export = "pdm export -f requirements -o requirements.txt --without-hashes"
 format = "ruff format src tests"
 format-test = "ruff format --check src tests"
-lint = "ruff check src tests"
-lint-fix = "ruff check --fix src tests"
-start = "python -m gradescopeapi"
+lint = "ruff check --extend-select I src tests"
+lint-fix = "ruff check --extend-select I --fix src tests"
+start = "fastapi run src/gradescopeapi/api/api.py"
 test = "pytest tests"
