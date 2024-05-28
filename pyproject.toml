@@ -33,6 +33,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 version = "1.0.0"
 
+[project.gui-scripts]
+gradescopeapi = "gradescopeapi.api.app:main"
+
 [project.license]
 text = "MIT"
 
