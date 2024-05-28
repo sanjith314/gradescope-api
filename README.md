@@ -1,5 +1,7 @@
 # Gradescope API
 
+[![PyPI version](https://img.shields.io/pypi/v/gradescopeapi)](https://pypi.org/project/gradescopeapi/) ![Test and lint workflow](https://github.com/nyuoss/gradescope-api/actions/workflows/main.yaml/badge.svg)
+
 ## Description
 
 This *unofficial* project serves as a library for programmatically interacting with [Gradescope](https://www.gradescope.com/). The primary purpose of this project is to provide students and instructors tools for interacting with Gradescope without having to use the web interface.
