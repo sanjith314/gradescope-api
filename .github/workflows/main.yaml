@@ -38,11 +38,11 @@ jobs:
       - name: Format code
         run: pdm format
 
-      # - name: Lint code
-      #   run: pdm lint
+      - name: Lint code
+        run: pdm lint
 
-      - name: Start project
-        run: pdm run start
+      # - name: Start project
+        # run: pdm run start
 
       - name: Run Tests
         run: pdm test

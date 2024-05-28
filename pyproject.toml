@@ -61,7 +61,7 @@ format-python = "ruff format src tests"
 format-python-check = "ruff format --check src tests"
 lint = "ruff check --extend-select I src tests"
 lint-fix = "ruff check --extend-select I --fix src tests"
-start = "fastapi run src/gradescopeapi/api/api.py"
+start = "fastapi run src/gradescopeapi/api/app.py"
 test = "pytest tests"
 
 [tool.pdm.scripts.format]
