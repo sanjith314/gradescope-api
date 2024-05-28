@@ -46,6 +46,7 @@ distribution = true
 
 [tool.pdm.dev-dependencies]
 dev = [
+    "mdformat>=0.7.17",
     "mypy>=1.8.0",
     "pre-commit>=3.7.0",
     "ruff>=0.4.3",
@@ -54,9 +55,23 @@ dev = [
 [tool.pdm.scripts]
 dev = "fastapi dev src/gradescopeapi/api/api.py"
 export = "pdm export -f requirements -o requirements.txt --without-hashes"
-format = "ruff format src tests"
-format-test = "ruff format --check src tests"
+format-markdown = "mdformat ."
+format-markdown-check = "mdformat --check ."
+format-python = "ruff format src tests"
+format-python-check = "ruff format --check src tests"
 lint = "ruff check --extend-select I src tests"
 lint-fix = "ruff check --extend-select I --fix src tests"
 start = "fastapi run src/gradescopeapi/api/api.py"
 test = "pytest tests"
+
+[tool.pdm.scripts.format]
+composite = [
+    "format-markdown",
+    "format-python",
+]
+
+[tool.pdm.scripts.format-check]
+composite = [
+    "format-markdown-check",
+    "format-python-check",
+]
