@@ -50,6 +50,7 @@ dev = [
     "mypy>=1.8.0",
     "pre-commit>=3.7.0",
     "ruff>=0.4.3",
+    "yamlfix>=1.16.0",
 ]
 
 [tool.pdm.scripts]
@@ -59,6 +60,8 @@ format-markdown = "mdformat ."
 format-markdown-check = "mdformat --check ."
 format-python = "ruff format src tests"
 format-python-check = "ruff format --check src tests"
+format-yaml = "yamlfix ."
+format-yaml-check = "yamlfix --check ."
 lint = "ruff check --extend-select I src tests"
 lint-fix = "ruff check --extend-select I --fix src tests"
 start = "fastapi run src/gradescopeapi/api/app.py"
@@ -68,10 +71,12 @@ test = "pytest tests"
 composite = [
     "format-markdown",
     "format-python",
+    "format-yaml",
 ]
 
 [tool.pdm.scripts.format-check]
 composite = [
     "format-markdown-check",
     "format-python-check",
+    "format-yaml-check",
 ]
