@@ -177,11 +177,11 @@ class Account:
         3. so far only accessible for teachers, not for students to get submissions to an assignment
         """
         ASSIGNMENT_ENDPOINT = f"{self.gradescope_base_url}/courses/{course_id}/assignments/{assignment_id}"
-        ASSIGNMENT_SUBMISSIONS_ENDPOINT = f"{ASSIGNMENT_ENDPOINT}/review_grades"
+        # ASSIGNMENT_SUBMISSIONS_ENDPOINT = f"{ASSIGNMENT_ENDPOINT}/review_grades"
         if not course_id or not assignment_id:
             raise Exception("One or more invalid parameters")
         session = self.session
-        submissions_resp = check_page_auth(session, ASSIGNMENT_SUBMISSIONS_ENDPOINT)
+        submissions_resp = check_page_auth(session, ASSIGNMENT_ENDPOINT)
         submissions_soup = BeautifulSoup(submissions_resp.text, "html.parser")
         # select submissions (class of td.table--primaryLink a tag, submission id stored in href link)
         submissions_a_tags = submissions_soup.select("td.table--primaryLink a")
